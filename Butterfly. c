@@ -1,0 +1,42 @@
+def main():
+
+    # Number of rows
+    n = 5
+
+    # Variables to store number of spaces and stars
+    spaces = 2 * n - 1
+    stars = 0
+
+    # The outer loop will run for (2 * n - 1) times
+    for i in range(1, 2 * n):
+
+        # Upper half of the butterfly
+        if i <= n:
+            spaces = spaces - 2
+            stars += 1
+
+        # Lower half of the butterfly
+        else:
+            spaces = spaces + 2
+            stars -= 1
+
+        # Print stars
+        for j in range(1, stars + 1):
+            print("*", end="")
+
+        # Print spaces
+        for j in range(1, spaces + 1):
+            print(" ", end="")
+
+        # Print stars
+        for j in range(1, stars + 1):
+            if j != n:
+                print("*", end="")
+
+        print()
+
+
+#Driver Code Starts
+if __name__ == "__main__":
+    main()
+#Driver Code Ends
